@@ -22,14 +22,4 @@ git filter-repo --analyze
 
 # remove from history
 git filter-repo --path "Sim Model" --invert-paths
-
-# in admin powershell: forced garbage collection (deleting emtpy directories), which failed in git bash (git gc) because of read-only permissions.
-# lists every subdir of .git/objects, loops through and clears read-only flag, force-deletes all objects (only if empty will it succeed) and run git gc.
-Get-ChildItem .git/objects -Directory | 
-ForEach-Object { 
-  $_.Attributes = $_.Attributes -band (-bnot [System.IO.FileAttributes]::ReadOnly); 
-  Remove-Item $_.FullName -Recurse -Force -ErrorAction SilentlyContinue 
-}
-git gc --prune=now
-# this literally corrupted my repo fml
-
+git filter-repo --path-regex "PicoW/.+\.csv" --invert-paths
