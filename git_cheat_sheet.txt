@@ -5,16 +5,23 @@ git status
 git add .
 
 # unstage everything
-git restore -- staged .
+git restore --staged .
+
+# commit (can end with short message by: -m "msg" )
+git commit
+git commit -m "msg"
+
+# search for a specific file throughout the git project history
+git log --follow --all -- "**/psk.json"
 
 # recursively list all files in current commit, with full paths, file sizes (bytes), sorted by 4th field / size, numeric, descending and aligned into columns.
 git ls-tree -r -t -l --full-name HEAD | sort -k4 -nr | column -t
 
-# list all object in history, type, hash, size (bytes), path, descend by size (2nd field), top 10.
-git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | sed -n 's/^blob //p' | sort --numeric-sort --key=2 | tail -n 10
+# find clutter in history. run command then read analysis file.
+git filter-repo --analyze
 
 # remove from history
-git filter-repo --path Sim Model --invert-paths
+git filter-repo --path "Sim Model" --invert-paths
 
 # in admin powershell: forced garbage collection (deleting emtpy directories), which failed in git bash (git gc) because of read-only permissions.
 # lists every subdir of .git/objects, loops through and clears read-only flag, force-deletes all objects (only if empty will it succeed) and run git gc.
