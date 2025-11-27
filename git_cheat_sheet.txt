@@ -28,10 +28,16 @@ git filter-repo --path "Sim Model" --invert-paths
 git filter-repo --path-regex "PicoW/.+\.csv" --invert-paths
 
 # add the remote repo to existing local repo (creating new remote after history change)
-git remote add origin https://github.com/your-username/my-awesome-project.git
+git remote add origin https://github.com/Timeinz/ECMO_Project_cleanup.git
 
 # verify remote repo
 git remote --verbose
 
 # first push to a new repo (setting the upstream repo)
 git push --set-upstream origin master
+
+# adding submodules
+git submodule add https://github.com/FreeRTOS/FreeRTOS.git PicoW_C/external/FreeRTOS
+
+# initialize all submodules (recursively with their own submodules)
+git submodule update --init --recursive

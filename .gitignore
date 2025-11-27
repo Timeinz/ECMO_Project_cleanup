@@ -19,7 +19,6 @@ Datasheets_Documents
 build/
 dist/
 venv/
-external/
 
 __pycache__/
 *.pyo

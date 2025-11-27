@@ -1,0 +1,6 @@
+[submodule "PicoW_C/external/FreeRTOS"]
+	path = PicoW_C/external/FreeRTOS
+	url = https://github.com/FreeRTOS/FreeRTOS.git
+[submodule "PicoW_C/external/pico-sdk"]
+	path = PicoW_C/external/pico-sdk
+	url = https://github.com/raspberrypi/pico-sdk.git
