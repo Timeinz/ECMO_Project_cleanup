@@ -4,6 +4,9 @@ git status
 # stage all changes
 git add .
 
+# get a summary of the changes currently staged
+git diff --cached --stat
+
 # unstage everything
 git restore --staged .
 

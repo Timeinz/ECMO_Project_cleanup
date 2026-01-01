@@ -19,6 +19,7 @@ Datasheets_Documents
 build/
 dist/
 venv/
+install/
 
 __pycache__/
 *.pyo

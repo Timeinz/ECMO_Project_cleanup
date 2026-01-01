@@ -1,0 +1,7 @@
+
+#build FreeRTOS demo
+mkdir build && cd build && mkdir freertos_demo && cd freertos_demo
+
+# optional remove the -Dpicotool_DIR=... part
+cmake -G Ninja ../../external/FreeRTOS/FreeRTOS/Demo/ThirdParty/Community-Supported-Demos/CORTEX_M0+_RP2040/ -DPICO_SDK_PATH=$(pwd)/../../external/pico-sdk -Dpicotool_DIR=$(pwd)/../../external/picotool/install/lib/cmake/picotool
+ninja

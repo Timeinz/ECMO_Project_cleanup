@@ -4,3 +4,6 @@
 [submodule "PicoW_C/external/pico-sdk"]
 	path = PicoW_C/external/pico-sdk
 	url = https://github.com/raspberrypi/pico-sdk.git
+[submodule "PicoW_C/external/picotool"]
+	path = PicoW_C/external/picotool
+	url = https://github.com/raspberrypi/picotool.git
